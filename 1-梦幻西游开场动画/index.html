@@ -1,0 +1,106 @@
+<!--
+ * @Descripttion: 
+ * @version: v1
+ * @Author: Edison Mo
+ * @Date: 2020-07-19 12:44:56
+ * @LastEditors: Edison Mo
+ * @LastEditTime: 2020-07-19 13:52:03
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>梦幻西游开场动画</title>
+  </head>
+  <style>
+    .content {
+      position: relative;
+      padding-top: 521px;
+      background-image: url(./images/bg.webp);
+      background-repeat: no-repeat;
+    }
+    .content > div {
+      position: absolute;
+      left: 50%;
+    }
+    .west_01 {
+      width: 200px;
+      height: 180px;
+      background-image: url(./images/sunwukong.png);
+      animation: move 1s steps(8) infinite;
+      margin-left: -400px;
+      top: 352px;
+    }
+    .west_02 {
+      width: 200px;
+      height: 180px;
+      background-image: url(./images/zhubajie.png);
+      animation: move 1s steps(8) infinite;
+      margin-left: -200px;
+      top: 356px;
+    }
+    .west_03 {
+      width: 170px;
+      height: 240px;
+      background-image: url(./images/tangseng.png);
+      animation: move-ts 1s steps(8) infinite;
+      top: 326px;
+    }
+    .west_04 {
+      width: 210px;
+      height: 200px;
+      background-image: url(./images/shaseng.png);
+      margin-left: 170px;
+      animation: move-ss 1s steps(8) infinite;
+      top: 372px;
+    }
+
+    @keyframes move {
+      from {
+        background-position-x: 0;
+      }
+      to {
+        background-position-x: -1600px;
+      }
+    }
+
+    @keyframes move-ts {
+      from {
+        background-position-x: 0;
+      }
+      to {
+        background-position-x: -1360px;
+      }
+    }
+
+    @keyframes move-ss {
+      from {
+        background-position-x: 0;
+      }
+      to {
+        background-position-x: -1680px;
+      }
+    }
+  </style>
+  <body>
+    <div class="content">
+      <div class="west_01"></div>
+      <div class="west_02"></div>
+      <div class="west_03"></div>
+      <div class="west_04"></div>
+    </div>
+  </body>
+  <script>
+    const bgMusic = new Audio();
+    bgMusic.src = "./images/csjw.mp3";
+    bgMusic.volume = 0.8;
+    bgMusic.loop = true;
+    bgMusic.autoplay = true;
+
+    const dom = document.querySelector(".content");
+    dom.onclick = function (e) {
+      bgMusic.play();
+    };
+  </script>
+</html>
